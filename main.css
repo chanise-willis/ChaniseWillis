@@ -1,0 +1,167 @@
+:root {
+  --clr-primary-100: #fff;
+  --clr-primary-200: #4d3b77;
+  --clr-primary-400: #d347a9;
+
+  --clr-secondary-900: #057760;
+
+  --ff-primary: "Raleway", sans-serif;
+  --ff-accent: "Playfair Display", serif;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+* {
+  margin: 0;
+  padding: 0px;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: var(--ff-primary);
+  font-weight: 600;
+  font-size: 1.3125rem;
+  line-height: 1.5;
+}
+
+.main {
+  margin-top: 3.5rem;
+}
+
+h1,
+h2,
+h3 {
+  font-weight: 900;
+  line-height: 1;
+  margin-bottom: 1rem;
+}
+
+h1 {
+  color: var(--clr-primary-200);
+  margin-top: 1rem;
+}
+
+h3 {
+  color: var(--clr-primary-400);
+}
+
+section {
+  padding: 4rem 0;
+  height: 100vh;
+}
+
+.text-center {
+  text-align-last: center;
+}
+
+/*.container {
+  margin-inline: auto;
+  width: min(90%, 70.5rem);
+  padding-block: 2rem;
+
+  display: grid;
+  gap: 1.5rem;
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.grid-span-2 {
+  grid-column: span 2;
+}
+
+.grid-span-3 {
+  grid-column: span 3;
+}
+*/
+
+.container {
+  margin-inline: auto;
+  width: min(90%, 70.5rem);
+  display: grid;
+  gap: 1.5rem;
+  grid-auto-columns: 1fr;
+  padding-block: 2rem;
+}
+
+#aboutSection .container {
+  grid-template-areas:
+    "one"
+    "three"
+    "two";
+}
+
+#projectSection .container {
+  grid-template-areas:
+    "one"
+    "two"
+    "three";
+}
+
+#contactSection .container {
+  grid-template-areas:
+    "one"
+    "two"
+    "three"
+    "four";
+}
+
+.container div:nth-child(1) {
+  grid-area: one;
+}
+
+.container div:nth-child(2) {
+  grid-area: two;
+}
+
+.container div:nth-child(3) {
+  grid-area: three;
+}
+
+.container div:nth-child(4) {
+  grid-area: four;
+}
+
+@media screen and (min-width: 70em) {
+  #aboutSection .container {
+    grid-template-areas:
+      "one one one"
+      "two two three";
+  }
+  #contactSection .container {
+    grid-template-areas:
+      "one one one"
+      "two three four";
+  }
+}
+
+p {
+  margin-bottom: 1rem;
+}
+
+.icon {
+  font-size: 2em;
+}
+
+.button {
+  background-color: var(--clr-secondary-900);
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+}
+
+img {
+  max-width: 18rem;
+  border-radius: 50%;
+  display: block;
+}
+
+.imgdiv {
+  justify-content: center;
+}

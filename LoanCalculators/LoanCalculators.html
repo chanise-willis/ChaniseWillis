@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<!--
+    LoanCalculators by Chanise
+    Quick and simple website for my protfolio
+-->
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>LoanCalculators</title>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <!--
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" 
+            integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+        -->
+        <link rel="stylesheet" href="../nav/nav.css">
+        <link rel="stylesheet" href="css/LoanCalculators.css">
+    </head>
+    <body>
+        <header>
+            <div class="navbar">
+                <nav>
+                    <div class="logo">
+                        <h4>Chanise Willis</h4>
+                    </div>
+                    <ul class="nav-links">
+                        <li><a href="../index.html">About Me</a></li>
+                        <li><a href="../index.html#projectSection">Projects</a></li>
+                        <li><a href="../index.html#contactSection">Contact</a></li>
+                    </ul>
+                    <div class="burger">
+                        <div class="line1"></div>
+                        <div class="line2"></div>
+                        <div class="line3"></div>
+                    </div>
+                </nav>
+            </div>
+        </header>
+        <main role="main">
+            <div class="container">
+                <section id="section1">
+                        <h1>Calculate Loan Payments</h1>
+                        <div class="form1">
+                            <div class="input-box">
+                                <label class="form-label">Loan Amount($)</label>
+                                <input class="form-control" id="loanAmount1" type="number" min="1" max="100000000000"/>
+                            </div>
+                            <div class="col-sm-6">
+                                <label class="form-label">Interest rate (%)</label>
+                                <input class="form-control" id="interestRate1" type="number" min="0.01" max="99"/>
+                            </div>
+                            <div class="col-sm-6">
+                                <label class="form-label">Number of periods (months)</label>
+                                <input class="form-control" id="numMonths1" type="number" min="1" max="6000"/>
+                            </div>
+                        </div>
+                        <hr class="my-4">
+
+                        <button class="btn btn-primary btn-lg" id="CalcLoanPaymentButton">Calculate Payment</button>
+                                              
+                        <div class="row my-3">
+                            <label class="fs-5">Payments to make each month ($)</label>
+                            <div class="fs-3" id="calculatedPayments"></div>
+                        </div>
+                        <div id="validation1"></div>
+                        <!--
+                        <div>
+                            <label>Total amount payed ($)</label>
+                            <div id="totalAmountPayed1"></div>
+                        </div>
+                        -->
+                </section>
+
+                <section id="section2">
+                    <div class="col-lg-6 col-sm-12">
+                        <h1>Calculate Number of Months</h1>
+                        <div class="form2">
+                            <div class="col-sm-6">
+                                <label class="form-label">Loan Amount ($)</label>
+                                <input class="form-control" id="loanAmount2" type="number" min="1" max="100000000000"/>
+                            </div>
+                            <div class="col-sm-6">
+                                <label class="form-label">Interest rate (%)</label>
+                                <input class="form-control" id="interestRate2" type="number" min="0.01" max="99"/>
+                            </div>
+                            <div class="col-sm-6">
+                                <label class="form-label">Payments ($)</label>
+                                <input class="form-control" id="Payments2" type="number" min="1" max="100000000000"/>
+                            </div>
+                        </div>
+                        <hr class="my-4">
+                        <button class="btn btn-primary btn-lg" onclick="calculateNumberMonths()">Calculate Months</button>
+                        
+                        <div class="row my-3">
+                            <label class="fs-5">Calculated number of periods (months)</label>
+                            <div class="fs-3" id="calculatedNumMonths"></div>
+                        </div>
+                        <div id="validation2"></div>
+                    </div>
+                </section>
+                
+                <section id="section3">
+                    <h1>Calculate Total Interest and Total Amount payed</h1>
+                    <div class="form1">
+                        <div class="col-sm-6">
+                            <label class="form-label">Loan Amount ($)</label>
+                            <input class="form-control" id="loanAmount3" type="number" min="1" max="100000000000"/>
+                        </div>
+                        <div class="col-sm-6">
+                            <label class="form-label">Interest rate (%)</label>
+                            <input class="form-control" id="interestRate3" type="number" min="0.01" max="99"/>
+                        </div>
+                        <div class="col-sm-6">
+                            <label class="form-label">Payments ($)</label>
+                            <input class="form-control" id="Payments3" type="number" min="1" max="100000000000"/>
+                        </div>
+                    
+                        <hr class="my-4">
+                        <button class="btn btn-primary btn-lg" onclick="calculateTotalInterest()">Calculate</button>
+                        <div class="row my-3">
+                            <label class="fs-5">Calculated number of periods (months)</label>
+                            <div class="fs-3" id="totalNumMonths3"></div>
+                        </div>
+                        <div class="row my-3">
+                            <label class="fs-5">Total interest to pay ($)</label>
+                            <div class="fs-3" id="totalInterest3"></div>
+                        </div>
+                        <div class="row my-3">
+                            <label class="fs-5">Total amount to pay (interest to pay + principle) ($)</label>
+                            <div class="fs-3" id="totalAmountPayed3"></div>
+                        </div>
+                        <div id="validation3"></div>
+                    </div>
+                    <div class="row">
+                        <div class="col-xl-6 table-responsive my-3 invisible" id="tableDiv">
+                            <div id="interestRateHiden" hidden></div>
+                            <table class="table table-hover">
+                                <thead>
+                                    <tr>
+                                        <th>Month</th>
+                                        <th>Begning Balance</th>
+                                        <th>Monthly Payment</th>
+                                        <th>Paid Towards Intertest</th>
+                                        <th>Paid Towards Principal</th>
+                                        <th>Ending Balance</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                    <div class="col-xl-6 invisible" id="advancedDiv">
+                        <h3>Advanced</h3>
+                        <p>Add Start Payments date to access Monthly Payment manipulation.</p>
+                        <div class="row my-3 align-items-end">
+                            <div class="col-4">
+                                <label class="form-label">Start Payments</label>
+                                <input class="form-control" id="startPaymentsDate" type="month" pattern="[0-9]{4}-[0-9]{2}"/>
+                            </div>
+                            <div class="col-3">
+                                <button class="btn btn-primary btn-sm" onclick="showAdvanced()">Advanced</button>
+                            </div>
+                        </div>
+                    
+                        <div id="startAndEnd" class="invisible advancedManip my-5">
+                            <div class="row">
+                                <div class="col-3">
+                                    <label>Start</label>
+                                </div>
+                                <div class="col-3">
+                                    <label>End</label>
+                                </div>
+                                <div class="col-3">
+                                    <label>New Amount</label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="invisible advancedManip row gx-2 justify-content-center">
+                            <div class="col-3">
+                                <button class='btn btn-secondary btn-sm' onclick="addMonthlyPayChangeLine()">Add range</button>
+                            </div>
+                            <div class="col-3">
+                                <button class='btn btn-secondary btn-sm' onclick="updateTable()">Update table</button>
+                            </div>
+                            <div id="validationUpdate"></div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+            <!--
+                <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+            -->
+            
+            <script src="../nav/nav.js"></script>
+            <script src="LoanCalculators.js"></script>
+        </div>
+        </main>
+    </body>
+</html>

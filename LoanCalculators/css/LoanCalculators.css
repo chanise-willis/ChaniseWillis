@@ -1,0 +1,49 @@
+:root {
+  --clr-primary-100: #fff;
+  --clr-primary-200: #4d3b77;
+  --clr-primary-400: #d347a9;
+
+  --clr-secondary-900: #057760;
+
+  --ff-primary: "Raleway", sans-serif;
+  --ff-accent: "Playfair Display", serif;
+}
+
+* {
+  margin: 0;
+  padding: 0px;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: var(--ff-primary);
+  font-weight: 600;
+  font-size: 1.3125rem;
+  line-height: 1.5;
+}
+
+.main {
+  margin-top: 3.5rem;
+}
+
+h1,
+h2,
+h3 {
+  font-weight: 900;
+  line-height: 1;
+  margin-bottom: 1rem;
+}
+
+h1 {
+  color: var(--clr-primary-200);
+  margin-top: 1rem;
+}
+
+h3 {
+  color: var(--clr-primary-400);
+}
+
+section {
+  padding: 4rem 0;
+  height: 100vh;
+}
