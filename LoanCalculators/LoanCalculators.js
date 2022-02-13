@@ -186,7 +186,7 @@ function addMonthlyPayChangeLine(){
     if(lastChild.id != ""){
         num = lastChild.id + 1;
     }
-    $("#startAndEnd").append("<div class='row'>"+
+    $("#startAndEnd").append("<div class='flex-row'>"+
             "<div class='col-3'><input class='startDate form-control' type='month'/></div>"+
             "<div class='col-3'><input class='endDate form-control' type='month'/></div>"+
             "<div class='col-3'><input class='amountChange form-control' type='number'/></div>"+

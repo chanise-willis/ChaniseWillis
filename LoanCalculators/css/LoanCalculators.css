@@ -3,10 +3,15 @@
   --clr-primary-200: #4d3b77;
   --clr-primary-400: #d347a9;
 
-  --clr-secondary-900: #057760;
+  --clr-secondary-800: #457bb8;
+  --clr-secondary-900: #3aa38e;
 
   --ff-primary: "Raleway", sans-serif;
   --ff-accent: "Playfair Display", serif;
+}
+
+html {
+  scroll-behavior: smooth;
 }
 
 * {
@@ -46,4 +51,186 @@ h3 {
 section {
   padding: 4rem 0;
   height: 100vh;
+}
+
+.text-center {
+  text-align-last: center;
+}
+
+.center-horizontal {
+  justify-content: center;
+}
+
+.container {
+  margin-inline: auto;
+  width: min(90%, 72rem);
+  padding-block: 2rem;
+  display: grid;
+  gap: 1.5rem;
+  grid-auto-columns: 1fr;
+}
+
+.container {
+  grid-template-areas:
+    "one"
+    "two"
+    "three"
+    "four"
+    "five"
+    "six"
+    "seven";
+}
+
+.container div:nth-child(1) {
+  grid-area: one;
+}
+
+.container div:nth-child(2) {
+  grid-area: two;
+}
+
+.container div:nth-child(3) {
+  grid-area: three;
+}
+
+.container div:nth-child(4) {
+  grid-area: four;
+}
+
+.container div:nth-child(5) {
+  grid-area: five;
+}
+
+.container div:nth-child(6) {
+  grid-area: six;
+}
+
+.container div:nth-child(7) {
+  grid-area: seven;
+}
+
+.container div:nth-child(8) {
+  grid-area: eight;
+  text-align-last: center;
+}
+
+@media screen and (min-width: 70em) {
+  #section1 .container {
+    grid-template-areas:
+      "one one one one one"
+      "two two two three three";
+    width: max(60%, 65rem);
+  }
+
+  #section2 .container {
+    grid-template-areas:
+      "one one one"
+      "two two three";
+    width: max(60%, 65rem);
+  }
+}
+
+@media screen and (min-width: 50em) {
+  #section3 .container {
+    grid-template-areas:
+      "one one one"
+      "two two three"
+      "four four four"
+      "five five five"
+      "six six six"
+      "seven seven seven"
+      "eight eight eight";
+  }
+}
+
+.flex {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.flex-row {
+  display: flex;
+  flex-direction: row;
+  gap: 1rem;
+}
+
+.flex label {
+  width: 18rem;
+}
+
+.flex input {
+  width: 10rem;
+  border-radius: 0.4rem;
+}
+
+#startPaymentsDate {
+  height: 2rem;
+}
+
+.invisible {
+  display: none;
+}
+
+.button {
+  background-color: var(--clr-secondary-900);
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+}
+
+.button-secondary {
+  background-color: var(--clr-secondary-800);
+  border: none;
+  color: white;
+  padding: 10px 16px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+}
+
+.table {
+  border-collapse: collapse;
+  margin: 25px 0;
+  min-width: 400px;
+  border-radius: 5px 5px 0 0;
+  overflow: hidden;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+}
+
+.table thead tr {
+  background-color: var(--clr-primary-400);
+  color: var(--clr-primary-100);
+  font-weight: bold;
+}
+
+.table tbody tr {
+  border-bottom: 1px solid #dddddd;
+  text-align: right;
+}
+
+.table tbody tr:nth-of-type(even) {
+  background-color: #f3f3f3;
+}
+
+.table tbody tr:last-of-type {
+  border-bottom: 2px solid var(--clr-primary-400);
+}
+
+.table thead th {
+  word-wrap: break-word;
+  padding: 0.5rem;
+}
+
+.table tbody td {
+  padding-right: 0.5rem;
 }
