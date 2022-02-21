@@ -61,6 +61,10 @@ section {
   justify-content: center;
 }
 
+.center-vertically {
+  align-items: center;
+}
+
 .container {
   margin-inline: auto;
   width: min(90%, 72rem);
@@ -159,9 +163,15 @@ section {
   width: 18rem;
 }
 
-.flex input {
+.range label {
+  width: 10rem;
+  text-align: center;
+}
+
+input {
   width: 10rem;
   border-radius: 0.4rem;
+  min-height: 1.75rem;
 }
 
 #startPaymentsDate {
@@ -189,6 +199,19 @@ section {
   background-color: var(--clr-secondary-800);
   border: none;
   color: white;
+  padding: 10px 16px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+}
+
+.button-white {
+  background-color: var(--clr-primary-100);
+  border: none;
+  color: black;
   padding: 10px 16px;
   text-align: center;
   text-decoration: none;

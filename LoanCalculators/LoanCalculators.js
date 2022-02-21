@@ -148,9 +148,9 @@ function calculateTotalInterest(){
         $("tbody").append("<tr><td>"+ months + "</td><td>" + currentBalance.toFixed(2) + "</td><td>" + payment.toFixed(2) + "</td><td>" + paidTowardInterest.toFixed(2) + "</td><td>" + paidTowardPrincipal.toFixed(2) + "</td><td>" + endBalance.toFixed(2) + "</td></tr>"); 
         currentBalance = endBalance;
     } while(currentBalance > 0);
-    $("#totalNumMonths3").text(months);
-    $("#totalInterest3").text(roundDecimal(totalInterest, 2));
-    $("#totalAmountPayed3").text(roundDecimal(totalPayment, 2));
+    $("#totalNumMonths3").text(months + " months");
+    $("#totalInterest3").text("$" + roundDecimal(totalInterest, 2));
+    $("#totalAmountPayed3").text("$" + roundDecimal(totalPayment, 2));
 }
 function calcAllTableFields(beginingBalance, payment, interest){    
     let paidTowardInterest = roundDecimal((beginingBalance * interest), 2);
@@ -186,11 +186,11 @@ function addMonthlyPayChangeLine(){
     if(lastChild.id != ""){
         num = lastChild.id + 1;
     }
-    $("#startAndEnd").append("<div class='flex-row'>"+
-            "<div class='col-3'><input class='startDate form-control' type='month'/></div>"+
-            "<div class='col-3'><input class='endDate form-control' type='month'/></div>"+
-            "<div class='col-3'><input class='amountChange form-control' type='number'/></div>"+
-            "<div class='col-3'><button class='btn btn-secondary btn-sm' onclick='removeMontlyPaymentChangeLine(this)'>Remove</button></div>"+
+    $("#startAndEnd").append("<div class='flex-row center-vertically'>"+
+            "<input class='startDate' type='month'/>"+
+            "<input class='endDate' type='month'/>"+
+            "<input class='amountChange' type='number'/>"+
+            "<button class='button-white' onclick='removeMontlyPaymentChangeLine(this)'><i class='fa fa-times' aria-hiden='true'></i></button>"+
         "</div>");
     divIntervals = document.getElementById("startAndEnd");
     lastChild = divIntervals.lastElementChild;
@@ -200,10 +200,13 @@ function removeMontlyPaymentChangeLine(elem){
     let divIntervals = document.getElementById("startAndEnd");
     divIntervals.removeChild(divIntervals.getElementsByTagName("div"));
     */
-    let par = elem.closest("div");
+    /*let par = elem.closest("div");
     let parentDiv = elem.parentElement;
     let parentOfParent = parentDiv.parentElement;
     document.getElementById("startAndEnd").removeChild(parentOfParent);
+    */
+    let parent = elem.parentElement;
+    document.getElementById("startAndEnd").removeChild(parent);
 }
 function updateTable(){
     $("#validationUpdate").text("");
