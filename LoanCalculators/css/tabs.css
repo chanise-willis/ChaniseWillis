@@ -1,0 +1,32 @@
+:root {
+  --clr-primary-400: #d347a9;
+  --clr-primary-600: #cc1294;
+}
+
+.inActive[data-tab-content] {
+  display: none;
+}
+
+.tabs {
+  display: flex;
+  justify-content: center;
+  list-style-type: none;
+  margin-top: 2.5rem;
+}
+
+.tab {
+  cursor: pointer;
+  padding: 0.6rem;
+  margin: 0.15rem;
+  border-bottom: 0.15rem solid black;
+  color: black;
+}
+
+.tab.active {
+  color: var(--clr-primary-600);
+  border-bottom: 0.15rem solid var(--clr-primary-400);
+}
+
+.tab:hover {
+  font-size: 1.15rem;
+}

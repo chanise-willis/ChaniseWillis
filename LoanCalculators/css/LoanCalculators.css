@@ -41,7 +41,6 @@ h3 {
 
 h1 {
   color: var(--clr-primary-200);
-  margin-top: 1rem;
 }
 
 h3 {
@@ -50,7 +49,6 @@ h3 {
 
 section {
   padding: 4rem 0;
-  height: 100vh;
 }
 
 .text-center {
@@ -256,4 +254,8 @@ input {
 
 .table tbody td {
   padding-right: 0.5rem;
+}
+
+.pageTitle {
+  margin-top: 10rem;
 }

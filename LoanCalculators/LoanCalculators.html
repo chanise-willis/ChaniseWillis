@@ -21,6 +21,7 @@
 
         <link rel="stylesheet" href="../nav/nav.css">
         <link rel="stylesheet" href="css/LoanCalculators.css">
+        <link rel="stylesheet" href="css/tabs.css">
     </head>
     <body>
         <header>
@@ -43,7 +44,16 @@
             </div>
         </header>
         <main role="main">
-                <section id="section1">                    
+            <h1 class="pageTitle text-center">Loan Calculators</h1>
+            <div style="width: min(90%, 72rem); padding-block: 2rem; margin-inline: auto;">
+                <p>Each tab leads to a seperate calculator. One calculates the monthly payments. One calculates the the number of months. The third one calculates the number of months, total paid toward interest, and total amount payed. Additionally the 3rd calcualtor displays a graph braking down the payments and advanced options.</p>
+            </div>
+            <ul class="tabs">
+                <li data-tab-target="#section1" class="tab active">Montly Payments</li>
+                <li data-tab-target="#section2" class="tab inActive">Number of Months</li>
+                <li data-tab-target="#section3" class="tab inActive">Interest & Advaced Options</li>
+            </ul>
+                <section id="section1" data-tab-content class="active">                    
                     <div class="container">
                         <div>
                             <h1 class="text-center">Calculate Loan Payments</h1>
@@ -71,7 +81,7 @@
                     </div>
                 </section>
 
-                <section id="section2">                    
+                <section id="section2" data-tab-content class="inActive">                    
                     <div class="container">
                     <div>
                         <h1 class="text-center">Calculate Number of Months</h1>                        
@@ -100,7 +110,7 @@
                     </div>
                 </section>
                 
-                <section id="section3">                    
+                <section id="section3" data-tab-content class="inActive">                    
                     <div class="container">                    
                         <div>
                             <h1 class="text-center">Calculate Total Interest and Total Amount payed</h1>
@@ -192,7 +202,8 @@
             -->
             
             <script src="../nav/nav.js"></script>
-            <script src="LoanCalculators.js"></script>
+            <script src="LoanCalculators.js"></script>            
+            <script src="js/tab.js"></script>
         </main>
     </body>
 </html>
