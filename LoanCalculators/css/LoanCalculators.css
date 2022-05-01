@@ -8,6 +8,7 @@
 
   --ff-primary: "Raleway", sans-serif;
   --ff-accent: "Playfair Display", serif;
+  --ff-numbers: sans-serif;
 }
 
 html {
@@ -29,6 +30,15 @@ body {
 
 .main {
   margin-top: 3.5rem;
+}
+
+.numFontNorm{
+  font-family: var(--ff-numbers);
+  font-weight: normal;
+}
+
+.numFontBold{
+  font-family: var(--ff-numbers);
 }
 
 h1,

@@ -51,7 +51,7 @@
             <ul class="tabs">
                 <li data-tab-target="#section1" class="tab active">Montly Payments</li>
                 <li data-tab-target="#section2" class="tab inActive">Number of Months</li>
-                <li data-tab-target="#section3" class="tab inActive">Interest & Advaced Options</li>
+                <li data-tab-target="#section3" class="tab inActive">Interest & Advanced Options</li>
             </ul>
                 <section id="section1" data-tab-content class="active">                    
                     <div class="container">
@@ -75,8 +75,10 @@
                         <div class="flex center-horizontal text-center">                            
                             <div id="validation1"></div>
                             <button class="button" id="CalcLoanPaymentButton">Calculate Payment</button>
-                            <label class="fs-5">Payments to make each month ($)</label>
-                            <div class="fs-3" id="calculatedPayments"></div>
+                            <div class="flex-row">
+                                <label class="fs-5">Payments to make each month ($)</label>
+                                <div class="fs-3 numFontBold" id="calculatedPayments"></div>
+                            </div>
                         </div>
                     </div>
                 </section>
@@ -104,8 +106,10 @@
                     <div class="flex center-horizontal">                        
                         <div id="validation2"></div>
                         <button class="button" onclick="calculateNumberMonths()">Calculate Months</button>
-                        <label class="fs-5">Calculated number of periods (months)</label>
-                        <div class="fs-3" id="calculatedNumMonths"></div>
+                        <div class="flex-row">
+                            <label class="fs-5">Calculated number of periods (months)</label>
+                            <div class="fs-3 numFontBold" id="calculatedNumMonths"></div>
+                        </div>
                     </div>
                     </div>
                 </section>
@@ -136,15 +140,15 @@
                         <div>
                             <div class="flex-row">
                                 <label class="fs-5">Calculated number of periods: </label>
-                                <div class="fs-3" id="totalNumMonths3"></div>
+                                <div class="fs-3 numFontBold" id="totalNumMonths3"></div>
                             </div>
                             <div class="flex-row">
                                 <label class="fs-5">Total interest to pay: </label>
-                                <div class="fs-3" id="totalInterest3"></div>
+                                <div class="fs-3 numFontBold" id="totalInterest3"></div>
                             </div>
                             <div class="flex-row">
                                 <label class="fs-5">Total amount to pay (interest to pay + principle): </label>
-                                <div class="fs-3" id="totalAmountPayed3"></div>
+                                <div class="fs-3 numFontBold" id="totalAmountPayed3"></div>
                             </div>
                         </div>
                         <div class="row">
@@ -154,14 +158,14 @@
                                     <thead>
                                         <tr>
                                             <th>Month</th>
-                                            <th>Begning Balance</th>
+                                            <th>Beginning Balance</th>
                                             <th>Monthly Payment</th>
                                             <th>Paid Towards Intertest</th>
                                             <th>Paid Towards Principal</th>
                                             <th>Ending Balance</th>
                                         </tr>
                                     </thead>
-                                    <tbody>
+                                    <tbody class="numFontNorm">
                                     </tbody>
                                 </table>
                             </div>
